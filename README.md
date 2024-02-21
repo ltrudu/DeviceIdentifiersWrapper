@@ -26,7 +26,8 @@ https://github.com/ltrudu/DeviceIdentifiersWrapper-Sample
 ## V0.8 to V0.9 : Updated for A13
 ```text
 	Added BIND_NOTIFICATION_LISTENER_SERVICE permission
-	Added com.symbol.emdk.emdkservice querie
+	Added com.symbol.emdk.emdkservice to the queries element of the AndroidManifest.xml
+	Added com.zebra.zebracontentprovider to the queries element of the AndroidManifest.xml
 	API updated to 33
 ```
 ## V0.4 to v0.8 : Basic cache mechanism & Wait for EMDK availability
