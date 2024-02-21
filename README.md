@@ -92,6 +92,7 @@ Then add a query element to retrive the data (only necessary for Android builds 
     <queries>
         <provider android:authorities="oem_info" />
         <package android:name="com.symbol.emdk.emdkservice" />
+    	<package android:name="com.zebra.zebracontentprovider"/>
     </queries>
 ```
 
@@ -114,6 +115,7 @@ Sample AdroidManifest.xml:
     <queries>
         <provider android:authorities="oem_info" />
         <package android:name="com.symbol.emdk.emdkservice" />
+    	<package android:name="com.zebra.zebracontentprovider"/>
     </queries>
         
     <application
