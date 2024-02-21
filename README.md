@@ -87,7 +87,7 @@ To use this helper on Zebra Android devices running Android 10 or higher, first 
 <uses-permission android:name="android.permission.BIND_NOTIFICATION_LISTENER_SERVICE"
 ```
 
-Then add a query element to retrive the data (only necessary for Android builds >= 11)
+Then add a query element to retrive the data
 
 ```xml
     <queries>
