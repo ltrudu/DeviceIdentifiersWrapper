@@ -1,7 +1,7 @@
 <manifest xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:tools="http://schemas.android.com/tools"
     package="com.zebra.deviceidentifierswrapper">
-  <!-- TODO: Add these permissions and queries to your app -->
+  <!-- TODO: BEGIN Add these permissions and queries to your app -->
   <uses-permission android:name="android.permission.READ_PHONE_STATE" />
   <uses-permission android:name="com.zebra.provider.READ"/>
   <uses-permission android:name="android.permission.BIND_NOTIFICATION_LISTENER_SERVICE"
@@ -10,8 +10,10 @@
 
   <queries>
     <package android:name="com.symbol.emdk.emdkservice" />
+    <package android:name="com.zebra.zebracontentprovider"/>
     <provider android:authorities="oem_info" />
   </queries>
+  <!-- TODO: END Add these permissions and queries to your app -->
 
   <!--application
       android:name = ".MainApplication"
@@ -22,7 +24,7 @@
       android:supportsRtl="true"
       android:theme="@style/AppTheme">
   <uses-library android:name="com.symbol.emdk" />
-  TODO: Add uses-library to your application
+  TODO: Add <uses-library android:name="com.symbol.emdk" /> to your application element
   ....
   </application-->
 
