@@ -1,6 +1,10 @@
 *Please be aware that this library / application / sample is provided as a community project without any guarantee of support*
 =========================================================
 
+[![](https://jitpack.io/v/ltrudu/DeviceIdentifiersWrapper.svg)](https://jitpack.io/#ltrudu/DeviceIdentifiersWrapper)
+[![](https://jitpack.io/v/ltrudu/DeviceIdentifiersWrapper/month.svg)](https://jitpack.io/#ltrudu/DeviceIdentifiersWrapper)
+
+
 # DeviceIdentifiersWrapper
 
 ## Easy access to serial number and IMEI
