@@ -2,7 +2,6 @@
 =========================================================
 
 [![](https://jitpack.io/v/ltrudu/DeviceIdentifiersWrapper.svg)](https://jitpack.io/#ltrudu/DeviceIdentifiersWrapper)
-
 [![](https://jitpack.io/v/ltrudu/DeviceIdentifiersWrapper/month.svg)](https://jitpack.io/#ltrudu/DeviceIdentifiersWrapper)
 
 
