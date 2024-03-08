@@ -2,6 +2,7 @@ package com.zebra.deviceidentifierswrapper;
 
 import android.Manifest.permission;
 import android.annotation.SuppressLint;
+import android.bluetooth.BluetoothAdapter;
 import android.content.Context;
 import android.content.pm.PackageInfo;
 import android.content.pm.PackageManager;
@@ -26,6 +27,8 @@ public class DIHelper {
 
     protected static String sIMEI = null;
     protected static String sSerialNumber = null;
+
+    protected static String sBtMacAddress = null;
 
     public static final long SEC_IN_MS = 1000;
     public static final long MIN_IN_MS = SEC_IN_MS * 60;
@@ -92,7 +95,7 @@ public class DIHelper {
         };
 
         new RetrieveOEMInfoTask()
-            .execute(context, Uri.parse("content://oem_info/oem.zebra.secure/build_serial"),
+            .executeAsync(context, Uri.parse("content://oem_info/oem.zebra.secure/build_serial"),
                     tempCallbackInterface);
     }
 
@@ -159,7 +162,57 @@ public class DIHelper {
             }
         };
 
-        new RetrieveOEMInfoTask().execute(context, Uri.parse("content://oem_info/wan/imei"),
+        new RetrieveOEMInfoTask().executeAsync(context, Uri.parse("content://oem_info/wan/imei"),
             tempCallbackInterface);
+    }
+
+    public static void getBtMacAddress(Context context, IDIResultCallbacks callbackInterface)
+    {
+        if(sBtMacAddress != null)
+        {
+            if(callbackInterface != null)
+            {
+                callbackInterface.onDebugStatus("BT Mac address already in cache.");
+            }
+            callbackInterface.onSuccess(sBtMacAddress);
+            return;
+        }
+        if (android.os.Build.VERSION.SDK_INT < 23) {
+            returnBtMacAddressUsingAndroidAPIs(context, callbackInterface);
+        } else {
+            returnBtMacAddressUsingZebraAPIs(context, callbackInterface);
+        }
+    }
+
+    private static void returnBtMacAddressUsingZebraAPIs(Context context, IDIResultCallbacks callbackInterface) {
+        IDIResultCallbacks tempCallbackInterface = new IDIResultCallbacks() {
+            @Override
+            public void onSuccess(String message) {
+                sBtMacAddress = message;
+                callbackInterface.onSuccess(message);
+            }
+
+            @Override
+            public void onError(String message) {
+                callbackInterface.onError(message);
+            }
+
+            @Override
+            public void onDebugStatus(String message) {
+                callbackInterface.onDebugStatus(message);
+            }
+        };
+
+        new RetrieveOEMInfoTask().executeAsync(context, Uri.parse("content://oem_info/oem.zebra.secure/bt_mac"),
+                tempCallbackInterface);
+    }
+
+    private static void returnBtMacAddressUsingAndroidAPIs(Context context, IDIResultCallbacks callbackInterface) {
+        BluetoothAdapter mBluetoothAdapter = BluetoothAdapter.getDefaultAdapter();
+        String macAddress = mBluetoothAdapter.getAddress();
+        if(callbackInterface != null)
+        {
+            callbackInterface.onSuccess(macAddress);
+        }
     }
 }

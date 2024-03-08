@@ -25,7 +25,7 @@ import java.util.Base64;
  *  (c) Zebra 2020
  */
 
-class RetrieveOEMInfoTask extends AsyncTask<Object, Void, Boolean> {
+class RetrieveOEMInfoTask extends ExecutorTask<Object, Void, Boolean> {
 
     @Override
     protected Boolean doInBackground(Object... objects) {
