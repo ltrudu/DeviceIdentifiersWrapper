@@ -27,6 +27,8 @@ Have fun with Zebra's devices :)
 ## Sample Repository
 https://github.com/ltrudu/DeviceIdentifiersWrapper-Sample
 
+Look for "TODO: MANDATORY FOR DeviceIdentifierWrapper" to find what you need to add to your AndroidManifest.xml and build files.
+
 ## V0.8 to V0.9 : Updated for A13
 ```text
 	Added BIND_NOTIFICATION_LISTENER_SERVICE permission
