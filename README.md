@@ -20,6 +20,9 @@ Have fun with Zebra's devices :)
 
 
 ## Change Log !!! 
+
+## Added new method DIHelper.getBtMacAddress to retrieve Bluetooth Mac Address.
+
 ### 1. Change of REPOSITORY
 ### 2. UPDATED FOR A13...
 ### 3. Added a Sample repository running on <=A13
@@ -28,6 +31,11 @@ Have fun with Zebra's devices :)
 https://github.com/ltrudu/DeviceIdentifiersWrapper-Sample
 
 Look for "TODO: MANDATORY FOR DeviceIdentifierWrapper" to find what you need to add to your AndroidManifest.xml and build files.
+
+## V0.9 to V0.10 : Get Bluetooth Mac Address
+```text
+	Added method DIHelper.getBtMacAddress to retrieve device's Bluetooth Mac Address
+```
 
 ## V0.8 to V0.9 : Updated for A13
 ```text
