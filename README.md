@@ -11,7 +11,7 @@
 
 Forget about StageNow, EMDK, certificates, application signature... complexity....
 
-Just get the serial number, the IMEI number or the Bluetooth Mac Address of your Zebra device in one method call (see at the end of this document).
+Just get the Serial Number, the IMEI number or the Bluetooth Mac Address of your Zebra device in one method call (see at the end of this document).
 
 Have fun with Zebra's devices :)
 
