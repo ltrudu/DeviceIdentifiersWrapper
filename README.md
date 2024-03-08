@@ -7,7 +7,7 @@
 
 # DeviceIdentifiersWrapper
 
-## Easy access to serial number, IMEI and Bluetooth Mac Address
+## Easy access to Serial Number, IMEI and Bluetooth Mac Address
 
 Forget about StageNow, EMDK, certificates, application signature... complexity....
 
