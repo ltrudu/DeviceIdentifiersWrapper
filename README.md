@@ -255,6 +255,31 @@ Snippet code to use to retrieve the IMEI of the device:
     }
 ```
 
+Snippet code to use to retrieve the Bluetooth Mac Address of the device:
+```java
+    private void getBTMacAddress(Context context)
+    {
+        DIHelper.getBtMacAddress(context, new IDIResultCallbacks() {
+            @Override
+            public void onSuccess(String message) {
+		// We've got the bt mac address
+                String myBluetoothMacAddress = message;
+            }
+
+            @Override
+            public void onError(String message) {
+                // An error occurred
+            }
+
+            @Override
+            public void onDebugStatus(String message) {
+                // You can use this method to get verbose information
+                // about what's happening behind the curtain
+            }
+        });
+    }
+```
+
 
 As the previous methods are asynchronous, if you need both information, it is strongly recommended to call the second request inside the onSuccess or onError of the first request. 
 
