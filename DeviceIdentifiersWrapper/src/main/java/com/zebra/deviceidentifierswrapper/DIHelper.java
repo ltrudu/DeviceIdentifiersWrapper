@@ -27,8 +27,14 @@ public class DIHelper {
 
     protected static String sIMEI = null;
     protected static String sSerialNumber = null;
-
     protected static String sBtMacAddress = null;
+    protected static String sProductModel = null;
+    protected static String sIdentityDeviceID = null;
+    protected static String sWifiMac = null;
+    protected static String sWifiAPMac = null;
+    protected static String sWifiSSID= null;
+    protected static String sEthernetMac = null;
+
 
     public static final long SEC_IN_MS = 1000;
     public static final long MIN_IN_MS = SEC_IN_MS * 60;
@@ -215,4 +221,213 @@ public class DIHelper {
             callbackInterface.onSuccess(macAddress);
         }
     }
+
+    public static void getProductModel(Context context, IDIResultCallbacks callbackInterface)
+    {
+        if(sProductModel != null)
+        {
+            if(callbackInterface != null)
+            {
+                callbackInterface.onDebugStatus("Product Model already in cache.");
+            }
+            callbackInterface.onSuccess(sProductModel);
+            return;
+        }
+
+        IDIResultCallbacks tempCallbackInterface = new IDIResultCallbacks() {
+            @Override
+            public void onSuccess(String message) {
+                sProductModel = message;
+                callbackInterface.onSuccess(message);
+            }
+
+            @Override
+            public void onError(String message) {
+                callbackInterface.onError(message);
+            }
+
+            @Override
+            public void onDebugStatus(String message) {
+                callbackInterface.onDebugStatus(message);
+            }
+        };
+
+        new RetrieveOEMInfoTask().executeAsync(context, Uri.parse("content://oem_info/oem.zebra.secure/ro_product_model"),
+                tempCallbackInterface);
+
+    }
+
+    public static void getIdentityDeviceID(Context context, IDIResultCallbacks callbackInterface)
+    {
+        if(sIdentityDeviceID != null)
+        {
+            if(callbackInterface != null)
+            {
+                callbackInterface.onDebugStatus("IdentityDeviceID already in cache.");
+            }
+            callbackInterface.onSuccess(sIdentityDeviceID);
+            return;
+        }
+
+        IDIResultCallbacks tempCallbackInterface = new IDIResultCallbacks() {
+            @Override
+            public void onSuccess(String message) {
+                sIdentityDeviceID = message;
+                callbackInterface.onSuccess(message);
+            }
+
+            @Override
+            public void onError(String message) {
+                callbackInterface.onError(message);
+            }
+
+            @Override
+            public void onDebugStatus(String message) {
+                callbackInterface.onDebugStatus(message);
+            }
+        };
+
+        new RetrieveOEMInfoTask().executeAsync(context, Uri.parse("content://oem_info/oem.zebra.secure/identity_device_id"),
+                tempCallbackInterface);
+
+    }
+
+    public static void getWifiMacAddress(Context context, IDIResultCallbacks callbackInterface)
+    {
+        if(sWifiMac != null)
+        {
+            if(callbackInterface != null)
+            {
+                callbackInterface.onDebugStatus("Wifi Mac Address already in cache.");
+            }
+            callbackInterface.onSuccess(sWifiMac);
+            return;
+        }
+
+        IDIResultCallbacks tempCallbackInterface = new IDIResultCallbacks() {
+            @Override
+            public void onSuccess(String message) {
+                sWifiMac = message;
+                callbackInterface.onSuccess(message);
+            }
+
+            @Override
+            public void onError(String message) {
+                callbackInterface.onError(message);
+            }
+
+            @Override
+            public void onDebugStatus(String message) {
+                callbackInterface.onDebugStatus(message);
+            }
+        };
+
+        new RetrieveOEMInfoTask().executeAsync(context, Uri.parse("content://oem_info/oem.zebra.secure/wifi_mac"),
+                tempCallbackInterface);
+
+    }
+
+    public static void getWifiAPMacAddress(Context context, IDIResultCallbacks callbackInterface)
+    {
+        if(sWifiAPMac != null)
+        {
+            if(callbackInterface != null)
+            {
+                callbackInterface.onDebugStatus("Wifi AP Mac Address already in cache.");
+            }
+            callbackInterface.onSuccess(sWifiAPMac);
+            return;
+        }
+
+        IDIResultCallbacks tempCallbackInterface = new IDIResultCallbacks() {
+            @Override
+            public void onSuccess(String message) {
+                sWifiAPMac = message;
+                callbackInterface.onSuccess(message);
+            }
+
+            @Override
+            public void onError(String message) {
+                callbackInterface.onError(message);
+            }
+
+            @Override
+            public void onDebugStatus(String message) {
+                callbackInterface.onDebugStatus(message);
+            }
+        };
+
+        new RetrieveOEMInfoTask().executeAsync(context, Uri.parse("content://oem_info/oem.zebra.secure/wifi_ap_mac"),
+                tempCallbackInterface);
+    }
+
+    public static void getWifiSSID(Context context, IDIResultCallbacks callbackInterface)
+    {
+        if(sWifiSSID != null)
+        {
+            if(callbackInterface != null)
+            {
+                callbackInterface.onDebugStatus("Wifi SSID already in cache.");
+            }
+            callbackInterface.onSuccess(sWifiSSID);
+            return;
+        }
+
+        IDIResultCallbacks tempCallbackInterface = new IDIResultCallbacks() {
+            @Override
+            public void onSuccess(String message) {
+                sWifiSSID = message;
+                callbackInterface.onSuccess(message);
+            }
+
+            @Override
+            public void onError(String message) {
+                callbackInterface.onError(message);
+            }
+
+            @Override
+            public void onDebugStatus(String message) {
+                callbackInterface.onDebugStatus(message);
+            }
+        };
+
+        new RetrieveOEMInfoTask().executeAsync(context, Uri.parse("content://oem_info/oem.zebra.secure/wifi_ssid"),
+                tempCallbackInterface);
+    }
+
+    public static void getEthernetMacAddress(Context context, IDIResultCallbacks callbackInterface)
+    {
+        if(sEthernetMac != null)
+        {
+            if(callbackInterface != null)
+            {
+                callbackInterface.onDebugStatus("Ethernet Mac Address already in cache.");
+            }
+            callbackInterface.onSuccess(sEthernetMac);
+            return;
+        }
+
+        IDIResultCallbacks tempCallbackInterface = new IDIResultCallbacks() {
+            @Override
+            public void onSuccess(String message) {
+                sEthernetMac = message;
+                callbackInterface.onSuccess(message);
+            }
+
+            @Override
+            public void onError(String message) {
+                callbackInterface.onError(message);
+            }
+
+            @Override
+            public void onDebugStatus(String message) {
+                callbackInterface.onDebugStatus(message);
+            }
+        };
+
+        new RetrieveOEMInfoTask().executeAsync(context, Uri.parse("content://oem_info/oem.zebra.secure/ethernet_mac"),
+                tempCallbackInterface);
+    }
+
+
 }
