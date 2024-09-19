@@ -7,11 +7,11 @@
 
 # DeviceIdentifiersWrapper
 
-## Easy access to Serial Number, IMEI and Bluetooth Mac Address
+## Easy access to Serial Number, IMEI and Bluetooth Mac Address and more !!!
 
 Forget about StageNow, EMDK, certificates, application signature... complexity....
 
-Just get the Serial Number, the IMEI number or the Bluetooth Mac Address of your Zebra device in one method call (see at the end of this document).
+Just get the Serial Number, the IMEI number, the Bluetooth Mac Address (and more, see below) of your Zebra device in one method call (see at the end of this document).
 
 Have fun with Zebra's devices :)
 
@@ -20,6 +20,16 @@ Have fun with Zebra's devices :)
 
 
 ## Change Log !!! 
+
+## 0.12.0 : Added new methods:
+DIHelper.getProductModel to retrieve the product model.
+DIHelper.getIdentityDeviceID to retrieve the identity device ID.
+DIHelper.getWifiMacAddress to retrieve the Wifi Mac Address.
+DIHelper.getWifiAPMacAddress to retrieve the Wifi Access Point Mac Address.
+DIHelper.getWifiSSID to retrieve the Wifi SSID.
+DIHelper.getEthernetMacAddress to retrieve the Ethernet Mac Address if applicable.
+
+See sample App for more information.
 
 ## Added new method DIHelper.getBtMacAddress to retrieve Bluetooth Mac Address.
 
