@@ -22,11 +22,17 @@ Have fun with Zebra's devices :)
 ## Change Log !!! 
 
 ## 0.12.0 : Added new methods:
+
 DIHelper.getProductModel to retrieve the product model.
+
 DIHelper.getIdentityDeviceID to retrieve the identity device ID.
+
 DIHelper.getWifiMacAddress to retrieve the Wifi Mac Address.
+
 DIHelper.getWifiAPMacAddress to retrieve the Wifi Access Point Mac Address.
+
 DIHelper.getWifiSSID to retrieve the Wifi SSID.
+
 DIHelper.getEthernetMacAddress to retrieve the Ethernet Mac Address if applicable.
 
 See sample App for more information.
