@@ -73,6 +73,11 @@ class DIProfileManagerCommand extends DICommandBase {
             {
                 String errorMessage = "Error when trying to retrieve ProfileManager: " + getResultCode(statusData.getResult());
                 logMessage(errorMessage, EMessageType.ERROR);
+
+                // Timed out, try again
+                if (statusData.getResult() == EMDKResults.STATUS_CODE.FEATURE_NOT_READY_TO_USE) {
+                    onEMDKManagerRetrieved(mEMDKManager);
+                }
             }
         }
     };
@@ -96,7 +101,7 @@ class DIProfileManagerCommand extends DICommandBase {
     public DIProfileManagerCommand(Context aContext) {
         super(aContext);
         mSettings = new DICommandBaseSettings(){{
-           mTimeOutMS = 20000;
+           mTimeOutMS = 120000;
            mEnableTimeOutMechanism = true;
            mCommandId = "DWProfileManagerCommand";
         }};
